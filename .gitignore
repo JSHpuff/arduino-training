@@ -1,0 +1,21 @@
+# Compiled binaries and build artifacts
+build/
+*.hex
+*.elf
+*.bin
+*.o
+*.a
+
+# PlatformIO and Arduino IDE temp files
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# VS Code personal workspace cache
+.vscode/.browse.c_cpp.db*
+.vscode/ipch/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+Desktop.ini
