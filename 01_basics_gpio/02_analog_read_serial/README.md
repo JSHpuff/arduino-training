@@ -11,6 +11,27 @@
 | 可變電阻 | GND 接地端 | GND | 系統參考地線 |
 | 可變電阻 | SIG 訊號端 | 類比接腳 A0 | 滑動端類比電壓輸入 |
 
+## 電路連接圖
+
+```mermaid
+flowchart LR
+    subgraph MCU["Arduino Uno"]
+        VCC["5V 電源端"]
+        GND["GND 參考地"]
+        A0["類比輸入 A0"]
+    end
+
+    subgraph POT["可變電阻電路"]
+        POT_VCC["VCC 固定端"]
+        POT_SIG["SIG 滑動端"]
+        POT_GND["GND 固定端"]
+    end
+
+    VCC -->|紅色電源線| POT_VCC
+    POT_SIG -->|綠色訊號線| A0
+    POT_GND -->|黑色地線| GND
+```
+
 ## 電路與韌體設計要點
 1. **電阻分壓原理**：可變電阻兩端跨接 5V 與 GND，滑動端輸出電壓與旋轉角度成線性正比，輸出電壓範圍介於 0V 至 5V。
 2. **10 位元 ADC 取樣**：ATmega328P 內建 10 位元逐次逼近型轉換器，量化範圍為 0 至 1023，單階解析度約為 4.88 毫伏特。

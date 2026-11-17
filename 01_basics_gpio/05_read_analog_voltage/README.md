@@ -11,6 +11,27 @@
 | 可變電阻 | GND 接地端 | GND | 系統參考地線 |
 | 可變電阻 | SIG 訊號端 | 類比接腳 A0 | 滑動端類比電壓輸入 |
 
+## 電路連接圖
+
+```mermaid
+flowchart LR
+    subgraph MCU["Arduino Uno"]
+        VCC["5V 電源端"]
+        GND["GND 參考地"]
+        A0["類比輸入 A0"]
+    end
+
+    subgraph POT["可變電阻分壓電路"]
+        POT_VCC["VCC 固定端"]
+        POT_SIG["SIG 滑動端"]
+        POT_GND["GND 固定端"]
+    end
+
+    VCC -->|紅色電源線| POT_VCC
+    POT_SIG -->|綠色訊號線| A0
+    POT_GND -->|黑色地線| GND
+```
+
 ## 電路與韌體設計要點
 1. **ADC 量化階數與解析度**：ATmega328P 內建 10 位元逐次逼近型 ADC，量化階數為 1024 階。在 5V 參考電壓下，最低有效位元 LSB 解析度約為 4.88 毫伏特。
 2. **浮點數電壓換算公式**：轉換公式為使用讀取之 ADC 數值乘上 5.0 除以 1024.0，將 0 至 1023 量化數值映射為 0.00V 至 4.995V 物理電壓。

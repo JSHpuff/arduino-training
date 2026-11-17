@@ -10,6 +10,25 @@
 | LED 陽極 | 數位腳位 13 | 經 220 歐姆限流電阻連接 |
 | LED 陰極 | GND | 電路接地端 |
 
+## 電路連接圖
+
+```mermaid
+flowchart LR
+    subgraph MCU["Arduino Uno"]
+        PIN13["數位第 13 腳"]
+        GND["GND 參考地"]
+    end
+
+    subgraph Circuit["LED 限流電路"]
+        R1["220 歐姆限流電阻"]
+        LED["紅色發光二極體"]
+    end
+
+    PIN13 -->|綠色訊號線| R1
+    R1 -->|陽極| LED
+    LED -->|陰極 / 黑色地線| GND
+```
+
 ## 電路特點
 * 使用限流電阻防止發光二極體順向電流過大燒毀。
 * 採用非阻塞輪詢架構，主迴圈保留持續處理其他感測器之能力。

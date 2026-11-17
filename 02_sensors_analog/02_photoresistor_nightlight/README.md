@@ -14,6 +14,37 @@
 | 黃色 LED | 陰極負極 | 限流電阻端 | 串接 220 歐姆限流電阻至 GND |
 | 限流電阻 | 接地端 | GND | 限制工作電流保護接腳 |
 
+## 電路連接圖
+
+```mermaid
+flowchart LR
+    subgraph MCU["Arduino Uno"]
+        VCC["5V 電源端"]
+        GND["GND 參考地"]
+        A0["類比 A0 光照輸入"]
+        D12["數位第 12 腳 夜燈控制"]
+    end
+
+    subgraph SENSOR["光敏電阻模組"]
+        LDR_VCC["VCC 供電"]
+        LDR_GND["GND 參考地"]
+        LDR_AO["AO 類比分壓輸出"]
+    end
+
+    subgraph NIGHTLIGHT["黃色夜燈電路"]
+        LED["黃色發光二極體"]
+        R1["220 歐姆限流電阻"]
+    end
+
+    VCC -->|紅色電源線| LDR_VCC
+    LDR_GND -->|黑色地線| GND
+    LDR_AO -->|綠色訊號線| A0
+
+    D12 -->|高電位點亮| LED
+    LED -->|陰極| R1
+    R1 -->|黑色接地線| GND
+```
+
 ## 電路與韌體設計要點
 1. **光敏電阻照度曲線換算**：光敏電阻的光電導特性呈現非線性對數關係，藉由微控制器 ADC 讀取分壓並計算等效電阻後，代入 Gamma 光敏特徵公式換算為實際照度 Lux。
 2. **光照閾值判定**：以 400 Lux 作為夜間照明啟動分界點。當照度低於 400 Lux 時自動點亮黃色 LED，高於閾值時則自動熄滅。
