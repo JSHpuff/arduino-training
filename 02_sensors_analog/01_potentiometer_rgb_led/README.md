@@ -17,7 +17,11 @@
 
 所有可變電阻之兩端接腳分別連接 5V 與 GND 構成完整分壓電路。
 
-## 電路連接圖
+## 電路佈局圖
+
+![Wokwi 電路佈局圖](./diagram.png)
+
+### 訊號流向圖
 
 ```mermaid
 flowchart LR

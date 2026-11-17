@@ -10,7 +10,11 @@
 | LED 陽極 | 數位腳位 13 | 經 220 歐姆限流電阻連接 |
 | LED 陰極 | GND | 電路接地端 |
 
-## 電路連接圖
+## 電路佈局圖
+
+![Wokwi 電路佈局圖](./diagram.png)
+
+### 訊號流向圖
 
 ```mermaid
 flowchart LR
