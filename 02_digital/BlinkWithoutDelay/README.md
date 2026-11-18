@@ -1,4 +1,4 @@
-# 01 BlinkWithoutDelay 非阻塞 LED 閃爍
+# BlinkWithoutDelay 非阻塞 LED 閃爍
 
 ## 簡介
 對應 Arduino 官方內建範例 `02.Digital -> BlinkWithoutDelay`，透過 `millis()` 時間戳記差值實作非阻塞輪詢控制發光二極體亮滅，避免主迴圈被 `delay()` 佔用。

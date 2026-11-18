@@ -12,22 +12,20 @@
 
 ## 目錄結構規劃
 
-專案依據硬體功能、軟體模擬與通訊協議分層收納：
+專案依照 Arduino IDE 官方 `Built-in Examples` 內建範例分類歸檔，非官方內建之自製實戰練習則統一收錄於 `custom_exercises/`：
 
-* `00_emulator_wsl/`：在 WSL Linux 環境以純 C 語言打造的 ATmega328P 指令集模擬器與單元測試
-* `01_basics_gpio/`：基礎數位輸入輸出、暫存器位元操作、按鍵消除彈跳
-* `02_sensors_analog/`：類比訊號讀取、ADC 暫存器配置、電壓換算
-* `03_actuators_pwm/`：Timer 暫存器硬體 PWM 輸出、馬達驅動
-* `04_protocols_bus/`：UART、I2C 匯流排、SPI 暫存器控制介面實作
-* `05_timers_interrupts/`：Timer 計時中斷、外部中斷、確定性時間觸發輪詢實作
+* `01_basics/`：對應官方 `01.Basics` 範例，包含 `AnalogReadSerial`、`DigitalReadSerial`、`Fade`、`ReadAnalogVoltage`
+* `02_digital/`：對應官方 `02.Digital` 範例，包含 `BlinkWithoutDelay`
+* `custom_exercises/`：自訂軟硬體整合練習，包含可變電阻 RGB 調光、光敏電阻智慧夜燈、HC-SR04 超音波測距、無源蜂鳴器旋律播放與八鍵電子琴
 
 ## 單一練習包含內容
 
 每個練習目錄標準配備以下檔案：
 
-1. `main.c` 或 `sketch.ino`：韌體主程式原始碼，優先採用 Register-Level C Code
+1. `main.c` 或 `sketch.ino`：韌體主程式原始碼
 2. `diagram.json`：Wokwi 虛擬電路圖設定檔，可直接於線上開啟模擬
-3. `README.md`：實驗目標、暫存器設定對照表、電路圖說明與驗證成果
+3. `diagram.png`：依 `diagram.json` 渲染之 Wokwi 實體電路佈局圖
+4. `README.md`：實驗目標、硬體接線表、電路佈局圖與設計要點
 
 ## 學習與程式碼審查工作流
 
