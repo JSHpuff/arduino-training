@@ -14,7 +14,7 @@
 
 專案依照 Arduino IDE 官方 `Built-in Examples` 內建範例分類歸檔，非官方內建之自製實戰練習則統一收錄於 `custom_exercises/`：
 
-* `01_basics/`：對應官方 `01.Basics` 範例，包含 `AnalogReadSerial`、`DigitalReadSerial`、`Fade`、`ReadAnalogVoltage`
+* `01_basics/`：對應官方 `01.Basics` 範例，包含 `AnalogReadSerial`、`Blink`、`DigitalReadSerial`、`Fade`、`ReadAnalogVoltage`
 * `02_digital/`：對應官方 `02.Digital` 範例，包含 `BlinkWithoutDelay`
 * `custom_exercises/`：自訂軟硬體整合練習，包含可變電阻 RGB 調光、光敏電阻智慧夜燈、HC-SR04 超音波測距、無源蜂鳴器旋律播放與八鍵電子琴
 
