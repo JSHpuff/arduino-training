@@ -16,7 +16,7 @@
 
 * `01_basics/`：對應官方 `01.Basics` 範例，包含 `AnalogReadSerial`、`Blink`、`DigitalReadSerial`、`Fade`、`ReadAnalogVoltage`
 * `02_digital/`：對應官方 `02.Digital` 範例，包含 `BlinkWithoutDelay`、`Button`
-* `custom_exercises/`：自訂軟硬體整合練習，包含可變電阻 RGB 調光、光敏電阻智慧夜燈、HC-SR04 超音波測距、無源蜂鳴器旋律播放與八鍵電子琴
+* `custom_exercises/`：自訂軟硬體整合練習，包含可變電阻 RGB 調光、光敏電阻智慧夜燈、HC-SR04 超音波測距、無源蜂鳴器旋律播放、八鍵電子琴與 NTC 熱敏電阻溫度量測
 
 ## 單一練習包含內容
 
